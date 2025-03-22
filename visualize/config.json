@@ -8,7 +8,7 @@
       "pixel_width": 1080
     },
     "animation": {
-      "max_moves": 30,
+      "max_moves": 10,
       "animation_speed": 0.1,
       "pause_between_moves": 0.1
     },
