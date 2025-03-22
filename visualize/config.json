@@ -1,11 +1,11 @@
 {
     "manim": {
       "output_dir": "../out/media",
-      "quality": "high_quality",
+      "quality": "low_quality",
       "disable_caching": false,
       "frame_rate": 15,
-      "pixel_height": 1920,
-      "pixel_width": 1080
+      "pixel_height": 1280,
+      "pixel_width": 720
     },
     "animation": {
       "max_moves": 10,
