@@ -1,5 +1,18 @@
 # Tetris Reinforcement Learning Agent in Pure C
 
+A reinforcement learning Tetris agent in Pure C with external API.
+Also featuring a [Manim](https://github.com/ManimCommunity/manim/) visualization of the neural network and gameplay.
+
+## Table of Contents
+- [Overview](#overview)
+- [Neural Network Architecture](#neural-network-architecture)
+- [Reinforcement Learning Details](#reinforcement-learning-details)
+- [Training Process](#training-process-and-hyperparameters)
+- [Building and Running](#building-and-running)
+- [Visualization](#visualization)
+- [Future Improvements](#notes-and-further-improvements)
+
+
 ## Overview
 This repo implements a reinforcement learning agent that learns to play Tetris using a multi-layer neural network, all written in pure C without external ML libraries. The agent uses RL techniques such as experience replay, a target network, double Q-learning, and checkpointing to stabilise training and improve performance over time.
 
@@ -40,10 +53,13 @@ The neural network estimates Q-values for different board states and consists of
 
   ![\Large \color{White} W \leftarrow W + \alpha (\text{gradient} - \lambda W)](https://latex.codecogs.com/svg.latex?%5CLarge%20%5Ccolor%7BWhite%7D%20W%20%5Cleftarrow%20W%20%2B%20%5Calpha%20(%5Ctext%7Bgradient%7D%20-%20%5Clambda%20W))
 
-### Target Network
-A separate target network provides stable Q-value estimates. It updates every 10 episodes.
+### Visualization
+Watch the neural network in action:
 
-<img src="imgs/nn.svg" width="300"/>
+<video width="600" controls>
+  <source src="visualize/TetrisRLAnimation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Reinforcement Learning Details
 ### Action Selection
@@ -66,19 +82,67 @@ A separate target network provides stable Q-value estimates. It updates every 10
 - **Target Network Update:** Every 10 episodes.
 
 ## Building and Running
-### Build Instructions
+
+### Build with Make
 ```sh
 make
+```
+
+### Build with CMake
+```sh
+# Create build directory
+mkdir -p out/build/x64-Debug
+cd out/build/x64-Debug
+
+# Generate build files
+cmake -DCMAKE_BUILD_TYPE=Debug ../..
+
+# Build the project
+cmake --build .
+
+# Return to project root
+cd ../../..
+```
+
+### Building the API DLL
+The visualization requires a compiled DLL/shared library to interface with the game engine:
+
+```sh
+# Navigate to build directory
+cd out/build/x64-Debug
+
+# Build the API shared library specifically
+cmake --build . --target api
+
+# The DLL will be available at:
+# Windows: out/build/x64-Debug/api.dll
+# Linux: out/build/x64-Debug/libapi.so
 ```
 
 ### Running on Linux
 ```sh
 ./tetris
 ```
+
 ### Running on Windows
 ```sh
 .\tetris.exe
 ```
+
+### Running the Visualization
+Make sure to build the API DLL first (see above), then configure the animation quality and such a like in visualize/config.json.
+
+```sh
+cd visualize
+python -m pip install -r requirements.txt
+```
+
+Then either double click run_manim.bat or
+```sh
+python -m manim animation.py TetrisRLAnimation -pqm
+```
+
+The generated animation will be saved to `out/media/videos/animation/[quality]/TetrisRLAnimation.mp4`
 
 ## Notes and Further Improvements
 - **Hyperparameter Tuning:** Experiment with different decay rates.

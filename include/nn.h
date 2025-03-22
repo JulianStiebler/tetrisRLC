@@ -4,6 +4,7 @@
 
 #define HIDDEN_SIZE1 20
 #define HIDDEN_SIZE2 10
+#define OUTPUT_SIZE 1
 
 // Online network parameters
 extern double W1[HIDDEN_SIZE1][INPUT_SIZE];

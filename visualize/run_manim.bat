@@ -1,0 +1,1 @@
+python -m manim animation.py TetrisRLAnimation -pqm

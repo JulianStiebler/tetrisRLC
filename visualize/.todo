@@ -1,0 +1,2 @@
+- Safeguard against when library isnt found
+- Fix some layout and expose more to config.json

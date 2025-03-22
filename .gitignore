@@ -52,3 +52,10 @@ Mkfile.old
 dkms.conf
 checkpoint.txt
 best_checkpoint.txt
+
+# Local files
+.venv/
+.vs/
+out/
+media/
+__pycache__/

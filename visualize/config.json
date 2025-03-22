@@ -1,0 +1,84 @@
+{
+    "manim": {
+      "output_dir": "../out/media",
+      "quality": "high_quality",
+      "disable_caching": false,
+      "frame_rate": 15,
+      "pixel_height": 1920,
+      "pixel_width": 1080
+    },
+    "animation": {
+      "max_moves": 30,
+      "animation_speed": 0.1,
+      "pause_between_moves": 0.1
+    },
+    "board": {
+      "cell_size": 0.15,
+      "scale": 1.3,
+      "grid_stroke_width": 1,
+      "border_stroke_width": 2,
+      "background_color": "#1E1E1E"
+    },
+    "neural_network": {
+      "layer_spacing": 2.2,
+      "neuron_spacing": 0.6,
+      "neuron_radius": 0.18,
+      "connection_stroke_width": 4.5,
+      "connection_opacity": 0.4,
+      "pulse_animation": {
+        "min_stroke_width": 1.0,
+        "max_stroke_width": 5.0,
+        "weight_scaling": 4.0,
+        "pulse_extra_width": 2,
+        "min_opacity": 0.3,
+        "duration": 0.2
+      },
+      "scale": 1.2
+    },
+    "features": {
+      "bar_width": 0.25,
+      "bar_height": 2.0,
+      "bar_spacing": 0.35,
+      "text_size": 9,
+      "scale": 0.9,
+      "max_values": {
+        "Height": 20.0,
+        "Holes": 30.0,
+        "Bumps": 20.0,
+        "Lines": 4.0,
+        "Wells": 15.0,
+        "Blocks": 20.0,
+        "Var": 10.0,
+        "Row T": 20.0,
+        "Col T": 20.0,
+        "Empty": 50.0
+      }
+    },
+    "colors": {
+      "pieces": {
+        "0": "#000000",
+        "1": "#00CED1",
+        "2": "#FFD700",
+        "3": "#9932CC",
+        "4": "#32CD32",
+        "5": "#FF0000",
+        "6": "#0000FF",
+        "7": "#FF8C00"
+      },
+      "positive_weight": "#32CD32",
+      "negative_weight": "#FF0000",
+      "pulse": "#FFFF00",
+      "neuron_inactive": "#0000FF",
+      "neuron_active": "#00FF00"
+    },
+    "layout": {
+      "title_buff": 0.3,
+      "section_buff": 0.5,
+      "feature_board_buff": 0.2
+    },
+    "text": {
+      "title_size": 24,
+      "label_size": 16,
+      "value_size": 9
+    }
+  }
